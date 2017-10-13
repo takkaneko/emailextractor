@@ -5,4 +5,6 @@ To use the script in the APM policy's Variable Assign action, replace the first 
 
 set lines [split [mcget {session.ssl.cert.x509extension}] "\n"];
 
+Also consider replacing the function "puts" with "return" when using in an APM policy.
+
 The code posted here is a pure tcl script, and to test the script in the tclsh, a text file session.ssl.cert.x509extension has to be placed in the same directory where you run tclsh.
