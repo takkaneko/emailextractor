@@ -1,9 +1,8 @@
-# Step1: Grab the line that contains Subject Alternative Names
+# Step1: Grab the line that contains Subject Alternative Names (SANs_all)
 
 set a [open session.ssl.cert.x509extension]
 set lines [split [read $a] "\n"]
 set SANs_all "";
-set email_addr "";
 foreach LINE $lines {
     set _line [string tolower $LINE];
     set line [string trim $_line " "];
@@ -14,8 +13,9 @@ foreach LINE $lines {
     }
 }
 
-# Step2: Choose/extract an email address from the SAN list
+# Step2: Choose/extract an email address from the SAN list (SANs)
 
+set email_addr "";
 set SANs [split $SANs_all ","];
 set SANs [string trim $SANs " "];
 foreach san $SANs {
