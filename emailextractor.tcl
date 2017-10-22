@@ -9,9 +9,9 @@ foreach LINE $lines {
     if {[string match *email:* $line] == 1 || [string match *rfc822:* $line] == 1 } then {
         append SANs_all $line;
     } else {
-        continue
-    }
-}
+        continue;
+    };
+};
 
 # Step2: Choose/extract an email address from the SAN list (SANs)
 
@@ -23,7 +23,7 @@ foreach san $SANs {
     if {[string match *email:* $san] == 1 || [string match *rfc822:* $san] == 1 } then {
         append email_addr [string range $san [expr { [string first ":" $san] + 1 } ] [expr $N-1 ] ]; 
     } else {
-        continue
-    }
-}
+        continue;
+    };
+};
 puts $email_addr
