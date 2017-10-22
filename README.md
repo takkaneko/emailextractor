@@ -10,7 +10,7 @@ Also consider replacing the function "puts" with "return" when using in an APM p
 The code posted here is a pure tcl script, and to test the script in the tclsh, a text file session.ssl.cert.x509extension has to be placed in the same directory where you run tclsh.
 
 Set "Custom Variable" to session.logon.last.username.
-The script should be placed as "Custom Expression" box ov Variable Assign action.
+The script should be placed as "Custom Expression" box of Variable Assign action.
 
 **Other Things to Note:
 
